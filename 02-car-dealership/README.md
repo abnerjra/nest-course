@@ -14,6 +14,10 @@ En este primer contacto con NestJS, exploraremos los siguientes conceptos:
 - Uso de decoradores
 - Uso de Pipes
 - Uso de Exception Filters
+- Uso de DTO (Data Transfer Object)
+- Uso de class-validator
+- Uso de Pipes a nivel aplicación
+- Uso de el principio DRY (Don't repeat yourself)
 
 ---
 
