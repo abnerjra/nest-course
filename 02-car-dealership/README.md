@@ -18,6 +18,8 @@ En este primer contacto con NestJS, exploraremos los siguientes conceptos:
 - Uso de class-validator
 - Uso de Pipes a nivel aplicación
 - Uso de el principio DRY (Don't repeat yourself)
+- Consumo de seeders
+- Dependencias entre modulos
 
 ---
 
@@ -47,6 +49,28 @@ nest g s <ruta/nombre>
 nest g s car
 ```
 
+### 3. Crear un recurso completo
+
+```bash
+nest g resource <nombre>
+# Ejemplo:
+nest g resource seed
+```
+
+Este comando creara la siguiente estructura de archivos
+
+```
+seed/
+├── seed.controller.ts
+├── seed.module.ts
+├── seed.service.ts
+├── dto
+│   ├── create-seed.dto.ts
+│   └── update-seed.dto.ts
+└── entities
+    └── seed.entity.ts
+```
+
 ---
 
 ## 🚀 Cómo levantar el proyecto
@@ -61,4 +85,10 @@ nest g s car
 
     ```bash
     npm run dev
+    ```
+
+3. Ejecutar seeders:
+
+    ```bash
+    http://localhost:3000/seed
     ```
