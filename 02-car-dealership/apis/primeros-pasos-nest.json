@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "7c8e6bc4-0def-43f9-b51c-ce4cb10b6988",
+		"name": "Nest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30409359"
+	},
+	"item": [
+		{
+			"name": "Cars",
+			"item": [
+				{
+					"name": "Get Cars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/car/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"car",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Car By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/car/781d291d-d613-4d8e-95c9-e3f53ed0bbfc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"car",
+								"781d291d-d613-4d8e-95c9-e3f53ed0bbfc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Car",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brand\": \"KIA\",\n    \"model\": \"Sportage\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/car/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"car",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Car",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "brand",
+									"value": "KIA",
+									"type": "text"
+								},
+								{
+									"key": "model",
+									"value": "K4",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "c3de5cbf-6d72-4f73-b33c-c8aa56349883",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/car/e1821b55-6c61-4d06-bb49-04a4a8f30b65",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"car",
+								"e1821b55-6c61-4d06-bb49-04a4a8f30b65"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Car",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/car/dbae7f41-bcea-42c4-92b6-a0bf07999344",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"car",
+								"dbae7f41-bcea-42c4-92b6-a0bf07999344"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Brands",
+			"item": [
+				{
+					"name": "Get brands",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/brand",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get brand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/brand",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create brand",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Suzuki",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/brand",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update brand",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Honda",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/brand/4f7f31d7-3f49-441f-b3a6-7fece1e250ec",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"brand",
+								"4f7f31d7-3f49-441f-b3a6-7fece1e250ec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete brand",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/brand/4f7f31d7-3f49-441f-b3a6-7fece1e250ec",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"brand",
+								"4f7f31d7-3f49-441f-b3a6-7fece1e250ec"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seeders",
+			"item": [
+				{
+					"name": "Run Seed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/seed",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"seed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
