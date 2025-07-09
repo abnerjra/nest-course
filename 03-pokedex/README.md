@@ -2,9 +2,15 @@
   <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" width="120" alt="PokeApi Logo" />
 </p>
 
+## 📚 Documentación relacionada
+* [NestJS](https://docs.nestjs.com/)
+* [Docker](https://docs.docker.com/get-started/)
+* [MongoDB](https://www.mongodb.com/try/download/community)
+* [Moongose](https://mongoosejs.com/docs/guide.html)
+
 ## 📘 Descripción
 
-Este proyecto, **POKEDEX**, tiene como objetivo explorar el funcionamiento de una API RESTful utilizando NestJS.
+Este proyecto, **POKEDEX**, tiene como objetivo explorar el funcionamiento de una API REST utilizando NestJS.
 
 ## 🧠 ¿Qué aprenderemos?
 
