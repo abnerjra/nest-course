@@ -3,10 +3,12 @@
 </p>
 
 ## 📚 Documentación relacionada
+
 * [NestJS](https://docs.nestjs.com/)
 * [Docker](https://docs.docker.com/get-started/)
 * [MongoDB](https://www.mongodb.com/try/download/community)
 * [Moongose](https://mongoosejs.com/docs/guide.html)
+* [PokeApi](https://pokeapi.co/)
 
 ## 📘 Descripción
 
