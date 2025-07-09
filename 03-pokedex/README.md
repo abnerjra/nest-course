@@ -21,6 +21,7 @@ A lo largo del desarrollo del proyecto, pondrás en práctica los siguientes con
 * Conexión a una base de datos MongoDB.
 * Uso de Docker para levantar los servicios necesarios.
 * Implementación de DTOs (Data Transfer Objects).
+* Uso del patrón adaptador.
 * Desarrollo de operaciones CRUD (Crear, Leer, Actualizar y Eliminar).
 * Creación de **PIPES** personalizados.
     1. Al crear un pipe perzonalizado se recomienda seguir la siguiente estructura de directorio
