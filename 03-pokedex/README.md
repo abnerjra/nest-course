@@ -85,3 +85,9 @@ nest g pi common/pipes/pasrMongoId
     ```bash
     npm run start:dev
     ```
+
+6. Reconstruir base de datos
+
+    ```bash
+    http://localhost:3000/api/v2/seed
+    ```
