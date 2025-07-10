@@ -7,11 +7,14 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { PokemonModule } from './pokemon/pokemon.module';
 import { CommonModule } from './common/common.module';
 import { SeedModule } from './seed/seed.module';
+import { EnvConfiguration } from './config/env.config';
+import { JoiValidationSchema } from './config/joi.valitation';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true,
+      load: [EnvConfiguration],
+      validationSchema: JoiValidationSchema
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
@@ -22,9 +25,4 @@ import { SeedModule } from './seed/seed.module';
     SeedModule,
   ],
 })
-export class AppModule {
-  constructor(configService: ConfigService) {
-    console.log('🔍 process.env.MONGO_DB:', process.env.MONGO_DB);
-    console.log('🔍 configService.get("MONGO_DB"):', configService.get('MONGO_DB'));
-  }
-}
+export class AppModule { }
