@@ -9,6 +9,7 @@
 * [MongoDB](https://www.mongodb.com/try/download/community)
 * [Moongose](https://mongoosejs.com/docs/guide.html)
 * [PokeApi](https://pokeapi.co/)
+* [Railway](https://railway.com/)
 
 ## 📘 Descripción
 
@@ -23,8 +24,9 @@ A lo largo del desarrollo del proyecto, pondrás en práctica los siguientes con
 * Implementación de DTOs (Data Transfer Objects).
 * Uso del patrón adaptador.
 * Desarrollo de operaciones CRUD (Crear, Leer, Actualizar y Eliminar).
-* Uso de variables de entorno
-* Mapear variables de entorno (Joi)
+* Uso de variables de entorno.
+* Mapear variables de entorno (Joi).
+* Desplegar proyecto en la nube (railway)
 * Creación de **PIPES** personalizados.
     1. Al crear un pipe perzonalizado se recomienda seguir la siguiente estructura de directorio
 
