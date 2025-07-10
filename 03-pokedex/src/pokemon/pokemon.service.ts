@@ -38,7 +38,7 @@ export class PokemonService {
     const { limit = 10, offset = 0 } = paginationDto;
     const pokemons = await this.pokemonModel.find()
       .limit(limit)
-      .skip((offset - 1))
+      .skip(((offset > 0) ? offset - 1 : offset))
       .sort({
         no: 1
       });
