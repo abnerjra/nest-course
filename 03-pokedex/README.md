@@ -23,6 +23,8 @@ A lo largo del desarrollo del proyecto, pondrás en práctica los siguientes con
 * Implementación de DTOs (Data Transfer Objects).
 * Uso del patrón adaptador.
 * Desarrollo de operaciones CRUD (Crear, Leer, Actualizar y Eliminar).
+* Uso de variables de entorno
+* Mapear variables de entorno (Joi)
 * Creación de **PIPES** personalizados.
     1. Al crear un pipe perzonalizado se recomienda seguir la siguiente estructura de directorio
 
@@ -63,31 +65,33 @@ nest g pi common/pipes/pasrMongoId
 ## 🚀 ¿Cómo ejecutar el proyecto?
 
 1. Clonar el proyecto.
-2. Instalar dependencias
+2. Crear archivo **`.env`** a partir del archivo **`.env.template`**
+3. Configurar las variables de entorno en el archivo **`.env`**
+4. Instalar dependencias
 
     ```bash
     npm install
     ```
 
-3. Tener instalado NEST CLI
+5. Tener instalado NEST CLI
 
     ```bash
     npm i -g @nestjs/cli
     ```
 
-4. Levantar base de datos
+6. Levantar base de datos
 
     ```bash
     docker compose up -d
     ```
 
-5. Levantar proyecto en modo desarrollo
+7. Levantar proyecto en modo desarrollo
 
     ```bash
     npm run start:dev
     ```
 
-6. Reconstruir base de datos
+8. Reconstruir base de datos
 
     ```bash
     http://localhost:3000/api/v2/seed
