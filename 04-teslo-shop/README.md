@@ -4,6 +4,24 @@
 
 # Teslo API
 
+## 🧠 ¿Qué aprenderemos?
+
+A lo largo del desarrollo del proyecto, pondrás en práctica los siguientes conceptos:
+
+* Uso de Docker para levantar los servicios necesarios.
+* Uso de TypeORM.
+* Creación de esquemas mediante TypeORM.
+* Conexión a una base de datos PostgreSQL.
+* Manejo de transacciones.
+* Implementación de DTOs (Data Transfer Objects).
+* Implementación de Entities
+* Uso del patrón adaptador.
+* Use del patrón repository
+* Desarrollo de operaciones CRUD.
+* Uso de variables de entorno.
+
+## 🚀 ¿Cómo ejecutar el proyecto?
+
 1. Instalar dependencias de desarrollo
 
     ```bash
@@ -11,11 +29,6 @@
     ```
 
 2. Crear archivo `.env` a partir del archivo `.env.template`
-
-    ```bash
-    npm install
-    ```
-
 3. Configurar las variables de entorno
 4. Levantar base de datos
 
