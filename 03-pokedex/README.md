@@ -98,3 +98,13 @@ nest g pi common/pipes/pasrMongoId
     ```bash
     http://localhost:3000/api/v2/seed
     ```
+
+## 🚀 Levantar el proyecto en modo producción con docker
+
+1. Crear el archivo **`.env.prod`**
+2. Llenar las variables de entorno.
+3. Crear la nueva imagen
+
+    ```bash
+    docker compose -f docker-compose.prod.yml --env-file .env.prod up --build
+    ```
