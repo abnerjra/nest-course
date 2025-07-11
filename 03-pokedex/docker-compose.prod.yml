@@ -1,0 +1,30 @@
+services:
+  mongo-db-pokedex:
+    image: mongo:8.0.9
+    container_name: mongo-db-pokedex
+    restart: always
+    ports:
+      - 27019:27017
+    environment:
+      MONGODB_DATABASE: nest-pokedex
+    volumes:
+      - ./mongo:/data/db
+
+  pokedexapp:
+    depends_on:
+      - mongo-db-pokedex
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: pokedexapp
+    container_name: pokedexapp
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    # working_dir: /var/www/pokedex
+    environment:
+      MONGO_DB: ${MONGO_DB}
+      PORT: ${PORT}
+      DEFAULT_LIMIT: ${DEFAULT_LIMIT}
+    # volumes:
+    #   - ./:/var/www/pokedex
