@@ -5,6 +5,7 @@ import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { Repository } from 'typeorm';
 import { Product } from './entities/product.entity';
+import { PaginationDto } from '../common/dtos/pagination.dto';
 
 @Injectable()
 export class ProductService {
@@ -28,8 +29,14 @@ export class ProductService {
     }
   }
 
-  async findAll() {
-    return this.productRepository.find();
+  async findAll(paginationDto: PaginationDto) {
+    const { limit = 10, offset = 0 } = paginationDto;
+    const page = (offset > 0) ? offset - 1 : offset;
+    return this.productRepository.find({
+      take: limit,
+      skip: page,
+      // TODO: relaciones
+    });
   }
 
   async findOne(id: string) {
