@@ -15,6 +15,7 @@ A lo largo del desarrollo del proyecto, pondrás en práctica los siguientes con
 * Manejo de transacciones.
 * Implementación de DTOs (Data Transfer Objects).
 * Implementación de Entities
+* Uso de queryNuilder.
 * Uso del patrón adaptador.
 * Use del patrón repository
 * Desarrollo de operaciones CRUD.
