@@ -1,4 +1,6 @@
 import {
+  BeforeInsert,
+  BeforeUpdate,
   Column,
   Entity,
   PrimaryGeneratedColumn
@@ -48,4 +50,22 @@ export class Product {
 
   // tags
   // images
+
+  @BeforeInsert()
+  checkSlugInsert() {
+    if (!this.slug) {
+      this.slug = this.title;
+    }
+
+    this.slug = this.slug.toLowerCase()
+      .normalize('NFD')                 // Elimina acentos
+      .replaceAll(/[\u0300-\u036f]/g, '')  // Elimina caracteres diacríticos
+      .replaceAll(/[^a-z0-9\s-]/g, '')     // Elimina caracteres especiales
+      .replaceAll(/\s+/g, ' ')             // Convierte múltiples espacios en uno solo
+      .trim()
+      .replaceAll(' ', '-')             // Reemplaza el único espacio por guion
+      .replaceAll('--', '-');           // Evita guiones dobles
+  }
+
+  // @BeforeUpdate()
 }
