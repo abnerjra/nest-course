@@ -6,6 +6,7 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { Repository } from 'typeorm';
 import { Product } from './entities/product.entity';
 import { PaginationDto } from '../common/dtos/pagination.dto';
+import { UuidAdapter } from 'src/common/adapters/uuid.adapter';
 
 @Injectable()
 export class ProductService {
@@ -14,7 +15,8 @@ export class ProductService {
 
   constructor(
     @InjectRepository(Product)
-    private readonly productRepository: Repository<Product>
+    private readonly productRepository: Repository<Product>,
+    private readonly uuidAdapter: UuidAdapter
   ) { }
 
 
@@ -39,9 +41,19 @@ export class ProductService {
     });
   }
 
-  async findOne(id: string) {
-    const product = await this.productRepository.findOneBy({ id });
-    if (!product) throw new NotFoundException(`Product with id ${id} not found`);
+  async findOne(term: string) {
+    let product: Product | null = null;
+    if (this.uuidAdapter.validateUuid(term)) {
+      product = await this.productRepository.findOneBy({ id: term });
+    } else {
+      const query = this.productRepository.createQueryBuilder();
+      product = await query.where(`lower(title)=:title or slug=:slug`, {
+        title: term.toLowerCase(),
+        slug: term.toLowerCase()
+      }).getOne();
+    }
+
+    if (!product) throw new NotFoundException(`Product with ${term} not found`);
     return product
   }
 
