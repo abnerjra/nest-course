@@ -1,7 +1,9 @@
 import {
+  ArrayNotEmpty,
   IsArray,
   IsIn,
   IsInt,
+  IsNotEmpty,
   IsNumber,
   IsOptional,
   IsPositive,
@@ -39,4 +41,11 @@ export class CreateProductDto {
 
   @IsIn(['men', 'women', 'kid', 'unisex'])
   gender: string;
+
+  @IsOptional()
+  @IsString({ each: true })
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsNotEmpty({ each: true })
+  tags?: string[]
 }
