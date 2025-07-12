@@ -67,5 +67,16 @@ export class Product {
       .replaceAll('--', '-');           // Evita guiones dobles
   }
 
-  // @BeforeUpdate()
+  @BeforeUpdate()
+  checkSlugUpdate() {
+    this.slug = this.slug.toLowerCase()
+      .normalize('NFD')
+      .replaceAll(/[\u0300-\u036f]/g, '')
+      .replaceAll(/[^a-z0-9\s-]/g, '')
+      .replaceAll(/\s+/g, ' ')
+      .trim()
+      .replaceAll(' ', '-')
+      .replaceAll('--', '-');
+  }
+
 }
