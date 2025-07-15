@@ -1,5 +1,6 @@
 import {
   Column,
+  DeleteDateColumn,
   Entity,
   ManyToOne,
   PrimaryGeneratedColumn
@@ -20,4 +21,8 @@ export class ProductImage {
     (product) => product.images
   )
   product: Product;
+
+  //* Columna para borrado logico
+  // @DeleteDateColumn()
+  // deleteAt?: Date;
 }
