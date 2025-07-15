@@ -43,3 +43,9 @@ A lo largo del desarrollo del proyecto, pondrás en práctica los siguientes con
     ```bash
     npm run start:dev
     ```
+
+6. Ejecutar seeder
+
+    ```bash
+    http://localhost:3000/api/seed
+    ```
