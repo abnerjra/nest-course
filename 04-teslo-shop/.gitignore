@@ -4,6 +4,8 @@
 /build
 
 postgres/
+storage/products/
+storage/uploads/
 
 # Logs
 logs
