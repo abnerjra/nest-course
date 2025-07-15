@@ -13,6 +13,7 @@ A lo largo del desarrollo del proyecto, pondrás en práctica los siguientes con
 * Creación de esquemas mediante TypeORM.
 * Conexión a una base de datos PostgreSQL.
 * Manejo de transacciones.
+* Relaciones entre tablas.
 * Implementación de DTOs (Data Transfer Objects).
 * Implementación de Entities
 * Uso de queryNuilder.
