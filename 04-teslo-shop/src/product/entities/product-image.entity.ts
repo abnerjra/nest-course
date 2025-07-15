@@ -7,6 +7,8 @@ import {
 } from "typeorm";
 import { Product } from "./product.entity";
 
+// Colocar nombre especifico a la tabla
+// @Entity({ name: 'product_images' })
 @Entity()
 export class ProductImage {
   @PrimaryGeneratedColumn()
