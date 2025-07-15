@@ -18,7 +18,8 @@ export class ProductImage {
   //* Relacion Muchos a Uno
   @ManyToOne(
     () => Product,
-    (product) => product.images
+    (product) => product.images,
+    { onDelete: 'CASCADE' }
   )
   product: Product;
 
