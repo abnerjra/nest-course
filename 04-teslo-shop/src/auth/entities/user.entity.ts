@@ -1,0 +1,62 @@
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn
+} from "typeorm";
+
+@Entity()
+export class User {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
+  @Column('text', {
+    unique: true,
+    nullable: false
+  })
+  email: string;
+
+  @Column('text', {
+    nullable: false,
+    select: false
+  })
+  password: string;
+
+  @Column('text', {
+    nullable: false
+  })
+  fullName: string;
+
+  @Column('bool', {
+    default: true
+  })
+  isActive: boolean;
+
+  @Column({
+    type: 'text',
+    array: true,
+    default: ['user']
+  })
+  roles: string[];
+
+  @CreateDateColumn({
+    name: 'created_at',
+    select: false
+  })
+  createdAt: Date
+
+  @UpdateDateColumn({
+    name: 'updated_at',
+    select: false
+  })
+  updatedAt: Date;
+
+  @DeleteDateColumn({
+    name: 'deleted_at',
+    select: false
+  })
+  deletedAt?: Date;
+
+}
