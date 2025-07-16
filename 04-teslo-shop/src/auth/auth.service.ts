@@ -2,7 +2,7 @@ import { Repository } from 'typeorm';
 
 import { JwtService } from '@nestjs/jwt';
 
-import { BadRequestException, Injectable, InternalServerErrorException, UnauthorizedException } from '@nestjs/common';
+import { BadRequestException, Injectable, InternalServerErrorException, UnauthorizedException, Headers } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import { BcryptAdapter } from 'src/common/adapters/bcrypt.adapter';
@@ -10,6 +10,7 @@ import { BcryptAdapter } from 'src/common/adapters/bcrypt.adapter';
 import { CreateUserDto, LoginUserDto } from './dto';
 import { User } from './entities/user.entity';
 import { JwtPayload } from './interfaces/jwt-payload.interface';
+import { IncomingHttpHeaders } from 'http';
 
 @Injectable()
 export class AuthService {
@@ -50,6 +51,13 @@ export class AuthService {
       ...user,
       token: this.getJwtToken({ id: user.id })
     };
+  }
+
+  async checkAuthStatus(user: User) {
+    return {
+      ...user,
+      token: this.getJwtToken({ id: user.id })
+    }
   }
 
   private getJwtToken(payload: JwtPayload): string {
