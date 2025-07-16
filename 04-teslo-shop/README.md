@@ -21,6 +21,9 @@ A lo largo del desarrollo del proyecto, pondrás en práctica los siguientes con
 * Use del patrón repository
 * Desarrollo de operaciones CRUD.
 * Uso de variables de entorno.
+* Autenticación de usuarios.
+* Uso de JWT.
+* Manejo de roles.
 
 ## 🚀 ¿Cómo ejecutar el proyecto?
 
