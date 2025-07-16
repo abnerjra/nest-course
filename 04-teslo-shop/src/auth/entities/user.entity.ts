@@ -1,3 +1,4 @@
+import { Product } from "src/product/entities";
 import {
   BeforeInsert,
   BeforeUpdate,
@@ -5,6 +6,7 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from "typeorm";
@@ -42,6 +44,12 @@ export class User {
     default: ['user']
   })
   roles: string[];
+
+  @OneToMany(
+    () => Product,
+    (product) => product.user
+  )
+  product: Product;
 
   @CreateDateColumn({
     name: 'created_at',
