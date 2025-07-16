@@ -6,6 +6,7 @@ import { CommonModule } from 'src/common/common.module';
 import { ProductService } from './product.service';
 import { ProductController } from './product.controller';
 import { Product, ProductImage } from './entities';
+import { AuthModule } from 'src/auth/auth.module';
 
 
 @Module({
@@ -13,7 +14,8 @@ import { Product, ProductImage } from './entities';
   providers: [ProductService],
   imports: [
     TypeOrmModule.forFeature([Product, ProductImage]),
-    CommonModule
+    CommonModule,
+    AuthModule
   ],
   exports: [
     ProductService,
