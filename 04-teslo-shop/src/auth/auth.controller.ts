@@ -8,9 +8,10 @@ import { CreateUserDto, LoginUserDto } from './dto';
 import { GetUser } from './decorators/get-user.decorator';
 import { User } from './entities/user.entity';
 import { RawHeaders } from './decorators/raw-headers.decorator';
-import { UserRoleGuard } from './guards/user-role/user-role.guard';
+import { UserRoleGuard } from './guards';
 import { RoleProtected } from './decorators/role-protected.decorator';
 import { ValidRoles } from './interfaces';
+import { Auth } from './decorators';
 
 @Controller('auth')
 export class AuthController {
@@ -50,6 +51,18 @@ export class AuthController {
   @RoleProtected(ValidRoles.superUser, ValidRoles.admin)
   @UseGuards(AuthGuard(), UserRoleGuard)
   testingPrivateRoute2(
+    @GetUser() user: User
+  ) {
+    return {
+      ok: true,
+      message: 'Hola desde una ruta protegida',
+      user
+    };
+  }
+
+  @Get('test/private3')
+  @Auth(ValidRoles.admin)
+  testingPrivateRoute3(
     @GetUser() user: User
   ) {
     return {
