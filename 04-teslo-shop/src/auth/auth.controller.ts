@@ -2,6 +2,7 @@ import { IncomingHttpHeaders } from 'http';
 
 import { Controller, Post, Body, Get, UseGuards, Req, Headers } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import { AuthService } from './auth.service';
 import { CreateUserDto, LoginUserDto } from './dto';
@@ -13,6 +14,7 @@ import { RoleProtected } from './decorators/role-protected.decorator';
 import { ValidRoles } from './interfaces';
 import { Auth } from './decorators';
 
+@ApiTags('Auth')
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) { }
@@ -23,6 +25,8 @@ export class AuthController {
   }
 
   @Post('login')
+  @ApiResponse({ status: 201, description: 'User logged in successfully', type: User })
+  @ApiResponse({ status: 401, description: 'Credentials are not valid (email/password)' })
   login(@Body() loginUserDto: LoginUserDto) {
     return this.authService.login(loginUserDto);
   }

@@ -13,11 +13,14 @@ import {
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ConfigService } from '@nestjs/config';
 
+import { ApiTags } from '@nestjs/swagger';
+
 import { diskStorage } from 'multer';
 
 import { FileService } from './file.service';
 import { fileFilter, fileNamer } from './helpers';
 
+@ApiTags('File')
 @Controller('file')
 export class FileController {
   constructor(
