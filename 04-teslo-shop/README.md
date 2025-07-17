@@ -4,6 +4,13 @@
 
 # Teslo API
 
+## 📚 Documentación relacionada
+
+* [NestJS](https://docs.nestjs.com/)
+* [TypeORM](https://typeorm.io/docs/getting-started)
+* [Docker](https://docs.docker.com/get-started/)
+
+
 ## 🧠 ¿Qué aprenderemos?
 
 A lo largo del desarrollo del proyecto, pondrás en práctica los siguientes conceptos:
@@ -16,7 +23,7 @@ A lo largo del desarrollo del proyecto, pondrás en práctica los siguientes con
 * Relaciones entre tablas.
 * Implementación de DTOs (Data Transfer Objects).
 * Implementación de Entities
-* Uso de queryNuilder.
+* Uso de queryBuilder.
 * Uso del patrón adaptador.
 * Use del patrón repository
 * Desarrollo de operaciones CRUD.
@@ -24,6 +31,7 @@ A lo largo del desarrollo del proyecto, pondrás en práctica los siguientes con
 * Autenticación de usuarios.
 * Uso de JWT.
 * Manejo de roles.
+* Manejo de decoradores.
 
 ## 🚀 ¿Cómo ejecutar el proyecto?
 
