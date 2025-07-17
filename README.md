@@ -28,3 +28,6 @@ Este curso está basado en el contenido impartido por **Fernando Herrera** en su
 
 - `03-pokedex`  
   API REST basada en la Pokédex. Incluye integración con MongoDB, manejo de configuración con variables de entorno, despliegue con Docker y conexión a servicios externos.
+
+- `04-teslo-shop`  
+  API REST para una tienda en línea. Se implementa el uso de decoradores, autenticación de usuarios mediante JWT y protección de rutas.
