@@ -18,8 +18,8 @@ export class MessageWsService {
     delete this.connectedClient[clientId];
   }
 
-  getConnectedClients(): number {
-    return Object.keys(this.connectedClient).length;
+  getConnectedClients(): string[] {
+    return Object.keys(this.connectedClient);
   }
 
 }
