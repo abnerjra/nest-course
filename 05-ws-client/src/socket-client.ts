@@ -1,5 +1,7 @@
 import { Manager, Socket } from "socket.io-client";
 
+let socket: Socket;
+
 export const connectToServer = (token: string) => {
 
   //! Enviar token mediante la propiedad extraHeaders
@@ -9,14 +11,14 @@ export const connectToServer = (token: string) => {
     }
   });
 
-  const socket = manager.socket('/');
-  // console.log({ socket });
+  //! borra todos los eventos on
+  socket?.removeAllListeners();
+  socket = manager.socket('/');
 
-
-  addListener(socket);
+  addListener();
 }
 
-const addListener = (socket: Socket) => {
+const addListener = () => {
   const clientsUl = document.querySelector('#clients-ul')!;
   const messageForm = document.querySelector<HTMLFormElement>('#message-form')!;
   const messageInput = document.querySelector<HTMLInputElement>('#message-input')!;
