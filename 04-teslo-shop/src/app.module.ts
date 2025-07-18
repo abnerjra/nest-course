@@ -7,11 +7,18 @@ import { SeedModule } from './seed/seed.module';
 import { FileModule } from './file/file.module';
 import { AuthModule } from './auth/auth.module';
 import { MessageWsModule } from './message-ws/message-ws.module';
+import { rejects } from 'assert';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
+      ssl: process.env.STAGE === 'prod',
+      extra: {
+        ssl: process.env.STAGE === 'prod'
+          ? { rejectUnauthorized: false }
+          : null,
+      },
       type: 'postgres',
       host: process.env.DB_HOST,
       port: +process.env.DB_PORT!,
