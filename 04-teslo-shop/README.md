@@ -32,6 +32,7 @@ A lo largo del desarrollo del proyecto, pondrás en práctica los siguientes con
 * Uso de JWT.
 * Manejo de roles.
 * Manejo de decoradores.
+* Websockets
 
 ## 🚀 ¿Cómo ejecutar el proyecto?
 
