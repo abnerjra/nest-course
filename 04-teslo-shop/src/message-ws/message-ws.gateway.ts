@@ -22,34 +22,27 @@ export class MessageWsGateway implements OnGatewayConnection, OnGatewayDisconnec
     private readonly jwtService: JwtService
   ) { }
 
-  handleConnection(client: Socket) {
+  async handleConnection(client: Socket) {
     const token = client.handshake.headers.authentication as string;
     let payload: JwtPayload;
     try {
       payload = this.jwtService.verify(token);
+      await this.messageWsService.registerClient(client, payload.id);
     } catch (error) {
       client.disconnect();
       return;
     }
 
-    console.log({ payload });
-
-    this.messageWsService.registerClient(client);
-
-    const clientsConnected = this.messageWsService.getConnectedClients();
-    // console.log({ clientsConnected: clientsConnected });
     // emit -> enviar informacion al cliente
-    this.wsServer.emit('clients-updated', clientsConnected);
-
+    this.wsServer.emit('clients-updated', this.messageWsService.getConnectedClients());
   }
 
   handleDisconnect(client: Socket) {
     // console.log('Client disconnected: ', client.id);
     this.messageWsService.removeClient(client.id);
     // console.log({ clientsConnected: this.messageWsService.getConnectedClients() });
-    const clientsConnected = this.messageWsService.getConnectedClients();
     // emit -> enviar informacion al cliente
-    this.wsServer.emit('clients-updated', clientsConnected);
+    this.wsServer.emit('clients-updated', this.messageWsService.getConnectedClients());
   }
 
   //* Escuchar eventos del cliente
@@ -70,7 +63,7 @@ export class MessageWsGateway implements OnGatewayConnection, OnGatewayDisconnec
 
     //! Emitir a todos los clientes, excepto al cliente emisor
     client.broadcast.emit('message-from-server', ({
-      fullName: 'Soy yo !!!',
+      fullName: this.messageWsService.getUserFullNameBySocket(client.id),
       message: payload.message
     }))
   }
